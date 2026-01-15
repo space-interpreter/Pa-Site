@@ -1,0 +1,853 @@
+/*
+=============================================================================
+PA SITE - CSS STYLESHEET
+============================================================================
+
+All HTML pages link to this file (index.html, developer.html, about.html).
+
+1. Reset & Base Styles - Global resets and default element styles
+2. Header & Navigation - Site header, logo, and navigation menu
+3. Hero Section - Main landing area
+4. Buttons - Primary and secondary button styles
+5. Cards - Design cards and role cards
+6. Styles - About page 
+7. Footer - Site footer
+8. Responsive - Mobile/tablet breakpoints
+
+COLORS (Green Theme):
+- Primary: #2C5F2D (forest green)
+- Accent: #97BC62 (light green)
+- Background: #F6F5F3 (off-white)
+- Text: #0f2b16 (dark green-black)
+
+============================================================================
+*/
+
+/* ==========================================================================
+   1. RESET & BASE STYLES
+   ========================================================================== */
+
+/* Reset all margins/padding and set default font */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+  line-height: 1.6;
+  color: #111;
+  background: #F6F5F3;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+ul {
+  list-style: none;
+}
+
+button {
+  cursor: pointer;
+  font-family: inherit;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Container for centering content with max-width */
+.container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* ==========================================================================
+   2. HEADER & NAVIGATION
+   ========================================================================= */
+
+.header {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 2rem;
+  padding: 1rem 2rem;
+  background: #2C5F2D;
+  color: #F6F5F3;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.logo {
+  font-weight: bold;
+  font-size: 1.2rem;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.logo svg {
+  width: 30px;
+  height: 30px;
+}
+
+#logo-img {
+  width: 60px;
+  height: 60px;
+}
+
+.logo h1 {
+  color: #97BC62;
+  font-size: 2em;
+}
+
+.nav {
+  display: flex;
+  gap: 2rem;
+  align-items: center;
+}
+
+.nav ul {
+  display: flex;
+  gap: 1.5rem;
+  align-items: center;
+  justify-content: flex-start;
+  margin: 0;
+  padding: 0;
+}
+
+.nav a {
+  text-decoration: none;
+  color: #F6F5F3;
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+
+.nav a:hover {
+  opacity: 0.9;
+}
+
+/* ==========================================================================
+   3. HERO SECTION
+   ========================================================================== */
+
+/* Default hero - full viewport height for landing page (index.html) */
+.hero {
+  padding: 3rem 2rem;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  position: relative;
+}
+
+.hero::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100vw;
+  height: 3px;
+  background: #2C5F2D;
+  max-width: 100%;
+}
+
+.hero > .container {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.hero h1 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+.hero p {
+  max-width: 700px;
+  margin-bottom: 1.5rem;
+  color: #333;
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Developer page hero - NOT full height, centered text */
+.hero.developer-hero {
+  height: auto;
+  min-height: auto;
+  padding: 4rem 2rem;
+  text-align: center;
+}
+
+.hero.developer-hero::after {
+  display: none;
+}
+
+.hero.developer-hero h1 {
+  text-align: center;
+}
+
+.hero.developer-hero p {
+  text-align: center;
+  margin: 0 auto;
+}
+
+/* Hero action buttons container */
+.hero-actions {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+}
+
+
+/* ==========================================================================
+   4. BUTTONS
+   ========================================================================== */
+
+/* Primary button - solid green background */
+.primary {
+  background: #2C5F2D;
+  color: #F6F5F3;
+  padding: 0.6rem 1.2rem;
+  border: none;
+  cursor: pointer;
+  border-radius: 4px;
+  font-weight: 500;
+}
+
+.primary:hover {
+  background: #245826;
+}
+
+/* Secondary button - transparent with border */
+.secondary {
+  background: transparent;
+  border: 1px solid #2C5F2D;
+  color: #2C5F2D;
+  padding: 0.6rem 1.2rem;
+  cursor: pointer;
+  border-radius: 4px;
+  font-weight: 500;
+}
+
+.secondary:hover {
+  background: rgba(44, 95, 45, 0.1);
+}
+
+/* ==========================================================================
+   5. CARDS - Designs & Roles
+   ========================================================================== */
+
+/* Designs section (index.html) */
+
+.designs {
+  padding: 3rem 2rem;
+  text-align: center;
+}
+
+.designs h2 {
+  font-size: 1.6rem;
+  text-align: center;
+}
+
+.subtitle {
+  margin: 0.5rem 0 2rem;
+  color: #555;
+  text-align: center;
+}
+
+.cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.card {
+  border: 1px solid #ddd;
+  padding: 1.5rem;
+  background: white;
+  border-radius: 4px;
+  display: flex;
+  flex-direction: column;
+}
+
+.card-image {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 4px;
+  margin-bottom: 1rem;
+  transition: transform 0.3s ease;
+}
+
+.card-image:hover {
+  transform: scale(1.05);
+}
+
+.card-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.card-title {
+  margin-bottom: 1.5rem;
+  flex: 1;
+  text-align: left;
+}
+
+.card-category {
+  margin-bottom: 0.5rem;
+  line-height: 1.4;
+  font-weight: 500;
+  color: #2C5F2D;
+}
+
+.card-description {
+  margin-bottom: 1rem;
+  line-height: 1.4;
+  color: #555;
+}
+
+.card-action {
+  margin-top: auto;
+}
+
+.card-action button {
+  background: #2C5F2D;
+  color: #F6F5F3;
+  border: none;
+  padding: 0.6rem 0;
+  cursor: pointer;
+  border-radius: 4px;
+  font-weight: 500;
+  width: 100%;
+}
+
+.card-action button:hover {
+  background: #245826;
+}
+
+/* Developer page - Role cards */
+.roles-section {
+  padding: 3rem 2rem;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.roles-section .section-title {
+  text-align: center;
+  font-size: 1.6rem;
+  margin-bottom: 1.5rem;
+  color: #0f2b16;
+}
+
+.roles-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 1rem 1.5rem;
+}
+
+.role-card {
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 8px 20px rgba(10, 15, 10, 0.06);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+.role-header {
+  padding: 18px;
+  color: #fff;
+  background: linear-gradient(90deg, #2C5F2D 0%, #245826 100%);
+  text-align: left;
+}
+
+/* UI/UX Designer variant - purple gradient */
+.role-header.uiux {
+  background: linear-gradient(90deg, #6b3b7e 0%, #5a2f6e 100%);
+}
+
+.role-title {
+  font-size: 1.1rem;
+  margin: 0 0 6px 0;
+}
+
+.role-subtitle {
+  font-size: 0.95rem;
+  opacity: 0.95;
+}
+
+.role-content {
+  padding: 18px;
+  color: #333;
+}
+
+/* Benefits list with bullet points */
+.content-wrapper {
+  display: flex;
+  gap: 1rem;
+  align-items: stretch;
+}
+
+.content-wrapper img {
+  width: 120px;
+  height: auto;
+  border-radius: 8px;
+  object-fit: cover;
+  align-self: stretch;
+}
+
+.benefits-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.benefits-list li {
+  padding: 10px 0;
+  border-bottom: 1px solid #f0f0f0;
+  padding-left: 0;
+}
+
+/* Join form inside role cards */
+.join-form {
+  display: flex;
+  justify-content: flex-start;
+  gap: 8px;
+  margin-top: 16px;
+}
+
+.join-form button.primary {
+  padding: 12px 14px;
+  border-radius: 6px;
+  border: none;
+  width: 100%;
+  height: 48px;
+}
+
+.view-more {
+  display: inline-block;
+  margin-top: 2rem;
+  text-decoration: none;
+  color: #2C5F2D;
+  font-weight: bold;
+  padding: 0.5rem 1rem;
+  border: 1px solid #2C5F2D;
+  border-radius: 4px;
+}
+
+.view-more:hover {
+  background: rgba(44, 95, 45, 0.1);
+}
+
+/* ==========================================================================
+   6. ABOUT PAGE STYLES
+   ========================================================================== */
+
+.about-hero {
+  padding: 3rem 2rem;
+  text-align: center;
+  background: #f9f9f9;
+}
+
+.about-hero h1 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+.about-hero p {
+  font-size: 1.2rem;
+  color: #666;
+}
+
+.image-gallery {
+  padding: 3rem 2rem;
+}
+
+.gallery-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1rem;
+}
+
+.gallery-container img {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+}
+
+.our-aim {
+  padding: 3rem 2rem;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.our-aim h2 {
+  font-size: 1.6rem;
+  margin-bottom: 1rem;
+}
+
+.aim-content {
+  display: flex;
+  gap: 2rem;
+}
+
+.aim-content p {
+  flex: 1;
+}
+
+.our-goals {
+  padding: 3rem 2rem;
+  background: #f9f9f9;
+}
+
+.goals-content {
+  max-width: 900px;
+  margin: 0 auto;
+  display: flex;
+  gap: 2rem;
+  align-items: center;
+}
+
+.goals-content img {
+  flex: 1;
+  max-width: 300px;
+  height: auto;
+}
+
+.goals-content p {
+  flex: 2;
+}
+
+.our-goals h2 {
+  font-size: 1.6rem;
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+/* ==========================================================================
+   7. FOOTER
+   ========================================================================== */
+
+.footer {
+  background: #2C5F2D;
+  color: #F6F5F3;
+  text-align: center;
+  padding: 1.5rem;
+  font-size: 0.9rem;
+  margin-top: 3rem;
+}
+
+/* ==========================================================================
+   8. RESPONSIVE - MOBILE/TABLET BREAKPOINTS
+   ========================================================================== */
+
+/* Tablet and smaller (768px and down) */
+@media (max-width: 768px) {
+  .header {
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 1rem;
+    gap: 1rem;
+  }
+
+  .logo {
+    justify-content: flex-start;
+    align-items: center;
+  }
+
+  .nav {
+    gap: 1.5rem;
+    justify-content: flex-start;
+    flex-wrap: nowrap;
+  }
+
+  .hero {
+    padding: 2rem 1.5rem;
+  }
+
+  .hero h1 {
+    font-size: 1.6rem;
+  }
+
+  .hero-actions {
+    flex-direction: column;
+    width: 100%;
+    max-width: 300px;
+    margin: 0 auto;
+  }
+  
+  .hero-actions button {
+    width: 100%;
+  }
+
+  .designs {
+    padding: 2rem 1.5rem;
+  }
+  
+  .cards {
+    grid-template-columns: 1fr;
+  }
+
+  .logo h1 {
+    display: none;
+  }
+
+  .logo img {
+    width: 28px;
+    height: auto;
+  }
+}
+
+/* Mobile landscape and smaller (480px and down) */
+@media (max-width: 480px) {
+  .nav {
+    gap: 1rem;
+  }
+  
+  .hero p {
+    font-size: 0.95rem;
+  }
+
+  .logo h1 {
+    display: none;
+  }
+
+  .logo img {
+    width: 28px;
+    height: auto;
+  }
+
+  .header {
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 0.75rem;
+  }
+
+  .nav {
+    display: block;
+  }
+
+  .nav ul {
+    gap: 0.75rem;
+  }
+
+  /* About page responsive */
+  .about-hero {
+    padding: 2rem 1rem;
+  }
+
+  .about-hero h1 {
+    font-size: 1.6rem;
+  }
+
+  .image-gallery {
+    padding: 2rem 1rem;
+  }
+
+  .gallery-container {
+    grid-template-columns: 1fr;
+  }
+
+  .our-aim {
+    padding: 2rem 1rem;
+  }
+
+  .our-goals {
+    padding: 2rem 1rem;
+  }
+
+  .goals-content {
+    flex-direction: column;
+  }
+
+  .aim-content {
+    flex-direction: column;
+  }
+
+  .site-title {
+    display: none;
+  }
+
+  /* Join form responsive */
+  .join-form {
+    justify-content: stretch;
+  }
+
+  .join-form button.primary {
+    width: 100%;
+  }
+
+  .content-wrapper img {
+    display: none;
+  }
+}
+
+/* Small mobile (425px and down) */
+@media (max-width: 425px) {
+  .content-wrapper img {
+    width: 60px;
+  }
+}
+
+/* ==========================================================================
+   9. MODAL STYLES - Hire Team Form
+   ========================================================================== */
+
+.modal {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 2000;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem;
+}
+
+.modal-content {
+  background: white;
+  padding: 2rem;
+  border-radius: 8px;
+  max-width: 450px;
+  width: 100%;
+  position: relative;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+  animation: modalSlideIn 0.3s ease-out;
+}
+
+@keyframes modalSlideIn {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.modal-content h2 {
+  font-size: 1.5rem;
+  margin-bottom: 0.5rem;
+  color: #0f2b16;
+}
+
+.modal-content p {
+  color: #666;
+  margin-bottom: 1.5rem;
+}
+
+.close-btn {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  font-size: 1.5rem;
+  cursor: pointer;
+  color: #999;
+  background: none;
+  border: none;
+  padding: 0.25rem;
+  line-height: 1;
+}
+
+.close-btn:hover {
+  color: #333;
+}
+
+.form-group {
+  margin-bottom: 1rem;
+  text-align: left;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-weight: 500;
+  color: #0f2b16;
+}
+
+.form-group input,
+.form-group textarea {
+  width: 100%;
+  padding: 0.75rem;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-size: 1rem;
+  font-family: inherit;
+  transition: border-color 0.2s ease;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+  outline: none;
+  border-color: #2C5F2D;
+}
+
+.form-group textarea {
+  resize: vertical;
+  min-height: 100px;
+}
+
+.form-group select {
+  width: 100%;
+  padding: 0.75rem;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-size: 1rem;
+  font-family: inherit;
+  background: white;
+  cursor: pointer;
+  transition: border-color 0.2s ease;
+}
+
+.form-group select:focus {
+  outline: none;
+  border-color: #2C5F2D;
+}
+
+.submit-btn {
+  width: 100%;
+  background: #2C5F2D;
+  color: #F6F5F3;
+  border: none;
+  padding: 0.75rem;
+  border-radius: 4px;
+  font-size: 1rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.submit-btn:hover {
+  background: #245826;
+}
+
+/* Mobile modal styles */
+@media (max-width: 480px) {
+  .modal-content {
+    padding: 1.5rem;
+  }
+
+  .modal-content h2 {
+    font-size: 1.3rem;
+  }
+}
+

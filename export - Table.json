@@ -1,0 +1,41 @@
+[
+{
+    "id": 1,
+    "Name": "Mobile E-Commerce Website",
+    "Description": "A mobile e-commerce website is an online store optimized for smartphones, allowing users to browse and purchase products easily.",
+    "Active": false,
+    "Image": [
+        {
+            "visible_name": "site.jpg",
+            "url": "https://baserow-backend-production20240528124524339000000001.s3.amazonaws.com/user_files/RIIR7jxPlwUEs86ry2vx62xqAZ5vw5c8_7dffc010d6ddf3247a88fafa60b7a74d363ca0f01ab3b07f8d28f2751466fcb9.jpg"
+        }
+    ],
+    "Category": "E-Commerce"
+},
+{
+    "id": 2,
+    "Name": "Business Card",
+    "Description": "An online presence page is a digital profile that showcases a brand or individual online, providing key information, credibility, and contact access in one place.",
+    "Active": false,
+    "Image": [
+        {
+            "visible_name": "business-card.png",
+            "url": "https://baserow-backend-production20240528124524339000000001.s3.amazonaws.com/user_files/6AAi8oSZ7QoZyVHDL3RhwTCur3ZXmjYq_e6a7384d6fcb6a31e76701180c22f5a3ab70dc5364150974a10e53281169d3f4.png"
+        }
+    ],
+    "Category": "Online Presence"
+},
+{
+    "id": 3,
+    "Name": "Landing Page",
+    "Description": "A landing page is a focused web page designed to capture user attention and drive a specific action, such as sign-ups or purchases.",
+    "Active": false,
+    "Image": [
+        {
+            "visible_name": "Landing-Page-Design.jpeg",
+            "url": "https://baserow-backend-production20240528124524339000000001.s3.amazonaws.com/user_files/ykVgNC092FxMLm7ugk3UhhxLrG3gBTTz_26386fdf3ed98f0b95b7c1b07ea959e5542e227ed1f99d27b8d4f66bce494add.jpeg"
+        }
+    ],
+    "Category": "Landing Page"
+}
+]
